@@ -65,6 +65,9 @@ config.AppContext  = composition root that wires everything together
 See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full design, data model and the
 rationale behind the key decisions.
 
+For the portfolio story behind the modernization, see
+[`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md).
+
 ### Notable improvements over the original
 
 - **No SQL injection** — every query is parameterized (the original concatenated strings).
