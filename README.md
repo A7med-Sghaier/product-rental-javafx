@@ -7,6 +7,14 @@ Originally a university project, it has been **re-architected into a clean, laye
 enterprise-style codebase** with a fresh visual design, a unit/integration test suite and
 full documentation.
 
+## Evaluate in 3 minutes
+
+1. Skim the screenshots below to understand the product workflow and UI scope.
+2. Review the architecture summary and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) to see the layered design.
+3. Check the test suite under `src/test/java` for domain, service and SQLite repository coverage.
+4. Run `mvn test` or inspect the GitHub Actions history to verify the automated checks.
+5. Read [`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md) for the modernization story and interview talking points.
+
 ## Screenshots
 
 ### Dashboard — active rentals at a glance
