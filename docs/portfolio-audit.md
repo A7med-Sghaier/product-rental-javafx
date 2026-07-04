@@ -20,7 +20,6 @@ Produkt-Ausleihe is a small JavaFX desktop application for local product-rental 
 
 ## Current weaknesses
 
-- Original code uses direct SQL string concatenation instead of prepared statements
 - No automated tests
 - Original archive included generated build output and duplicated dependency jars
 - UI and persistence are tightly coupled, which limits maintainability
@@ -52,15 +51,20 @@ Public is acceptable after the user confirms ownership and publication safety. T
 
 JavaFX and SQLite desktop application for managing product rentals, created as a university TD project and cleaned for portfolio review.
 
-## Step-by-step improvement plan
+## Completed cleanup
 
 1. Remove generated binaries, bundled jars and local runtime database files.
 2. Add Maven build metadata and dependency management.
 3. Add `.gitignore` for build outputs, IDE files and local SQLite data.
 4. Add a recruiter-readable README with setup, features and portfolio context.
 5. Add a basic CI workflow for Maven builds.
-6. Future pass: replace SQL string concatenation with prepared statements.
-7. Future pass: add small persistence/service tests around database operations.
+6. Replace SQL string concatenation with prepared statements.
+
+## Future improvement plan
+
+1. Add small persistence/service tests around database operations.
+2. Improve JavaFX form validation and user-facing error handling.
+3. Consider moving the project into the standard Maven `src/main/java` layout.
 
 ## Estimated effort
 
