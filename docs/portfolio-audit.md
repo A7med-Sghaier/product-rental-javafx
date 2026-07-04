@@ -1,5 +1,12 @@
 # Portfolio Audit
 
+> **Update (v2.0):** The weaknesses identified below have since been addressed. The app was
+> re-architected into layered `domain` / `persistence` / `service` / `ui` packages with
+> dependency injection, all SQL rewritten to prepared statements, `BigDecimal` money, a
+> JUnit 5 + Mockito test suite, a modern UI theme and full documentation. This file is kept
+> as the original pre-modernization assessment. See `README.md` and `docs/ARCHITECTURE.md`
+> for the current design.
+
 ## Project summary
 
 Produkt-Ausleihe is a small JavaFX desktop application for local product-rental management. It supports customer, category and product management, rental creation, product returns and simple table filtering.

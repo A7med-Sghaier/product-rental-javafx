@@ -1,0 +1,328 @@
+/*
+ * Produkt-Ausleihe — modern design system
+ * ----------------------------------------
+ * A single source of truth for colours, typography, spacing and component styling.
+ * Custom "looked-up colours" are defined on .root and referenced throughout, giving a
+ * lightweight design-token layer on top of JavaFX CSS.
+ */
+
+.root {
+    /* Colour tokens */
+    -color-bg:            #f1f5f9;   /* app background (slate-100)   */
+    -color-surface:       #ffffff;   /* cards / panels               */
+    -color-surface-alt:   #f8fafc;   /* subtle zebra / hover         */
+    -color-sidebar:       #0f172a;   /* slate-900                    */
+    -color-sidebar-hover: #1e293b;   /* slate-800                    */
+    -color-border:        #e2e8f0;   /* slate-200                    */
+
+    -color-text:          #0f172a;   /* slate-900                    */
+    -color-text-muted:    #64748b;   /* slate-500                    */
+    -color-text-invert:   #e2e8f0;   /* on dark sidebar              */
+
+    -color-accent:        #6366f1;   /* indigo-500                   */
+    -color-accent-hover:  #4f46e5;   /* indigo-600                   */
+    -color-accent-soft:   #eef2ff;   /* indigo-50                    */
+    -color-success:       #16a34a;   /* green-600                    */
+    -color-success-soft:  #dcfce7;
+    -color-warning:       #d97706;   /* amber-600                    */
+    -color-warning-soft:  #fef3c7;
+    -color-danger:        #dc2626;   /* red-600                      */
+
+    -fx-font-family: "Segoe UI", "Helvetica Neue", "Inter", "Arial", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: -color-bg;
+}
+
+/* ----------------------------------------------------------------- Layout shell */
+
+.app-shell {
+    -fx-background-color: -color-bg;
+}
+
+.sidebar {
+    -fx-background-color: -color-sidebar;
+    -fx-min-width: 232px;
+    -fx-pref-width: 232px;
+    -fx-padding: 24px 16px 24px 16px;
+    -fx-spacing: 4px;
+}
+
+.sidebar-brand {
+    -fx-text-fill: white;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 8px 4px 8px;
+}
+
+.sidebar-brand-sub {
+    -fx-text-fill: -color-text-muted;
+    -fx-font-size: 11px;
+    -fx-padding: 0 8px 20px 8px;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-text-invert;
+    -fx-font-size: 13.5px;
+    -fx-alignment: center-left;
+    -fx-padding: 11px 14px;
+    -fx-background-radius: 9px;
+    -fx-cursor: hand;
+    -fx-max-width: infinity;
+    -fx-graphic-text-gap: 12px;
+}
+
+.nav-button:hover {
+    -fx-background-color: -color-sidebar-hover;
+}
+
+.nav-button:selected,
+.nav-button.active {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* ----------------------------------------------------------------- Content area */
+
+.content {
+    -fx-padding: 28px 32px;
+    -fx-background-color: -color-bg;
+}
+
+.page-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+.page-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text-muted;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+/* --------------------------------------------------------------------- Cards */
+
+.card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 14px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 12, 0, 0, 4);
+}
+
+.kpi-card {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 14px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-padding: 18px 20px;
+    -fx-min-width: 190px;
+    -fx-spacing: 6px;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 12, 0, 0, 4);
+}
+
+.kpi-label {
+    -fx-text-fill: -color-text-muted;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.kpi-value {
+    -fx-text-fill: -color-text;
+    -fx-font-size: 27px;
+    -fx-font-weight: bold;
+}
+
+.kpi-accent .kpi-value { -fx-text-fill: -color-accent; }
+.kpi-success .kpi-value { -fx-text-fill: -color-success; }
+
+/* ------------------------------------------------------------------- Buttons */
+
+.button {
+    -fx-background-radius: 9px;
+    -fx-padding: 9px 18px;
+    -fx-cursor: hand;
+    -fx-font-size: 13px;
+}
+
+.button-primary {
+    -fx-background-color: -color-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button-primary:hover  { -fx-background-color: -color-accent-hover; }
+.button-primary:disabled { -fx-opacity: 0.45; }
+
+.button-secondary {
+    -fx-background-color: -color-surface;
+    -fx-text-fill: -color-text;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+    -fx-font-weight: bold;
+}
+
+.button-secondary:hover { -fx-background-color: -color-surface-alt; }
+
+.button-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-accent;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 10px;
+}
+
+.button-ghost:hover { -fx-background-color: -color-accent-soft; }
+
+.button-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-danger;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-border-radius: 9px;
+    -fx-font-weight: bold;
+}
+
+.button-danger:hover { -fx-background-color: #fef2f2; }
+
+/* --------------------------------------------------------------- Text inputs */
+
+.text-field, .date-picker, .choice-box, .combo-box {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 9px;
+    -fx-border-color: -color-border;
+    -fx-border-radius: 9px;
+    -fx-border-width: 1px;
+    -fx-padding: 7px 12px;
+    -fx-prompt-text-fill: -color-text-muted;
+}
+
+.text-field:focused, .date-picker:focused, .choice-box:focused, .combo-box:focused {
+    -fx-border-color: -color-accent;
+}
+
+.search-field {
+    -fx-min-width: 240px;
+}
+
+.field-label {
+    -fx-text-fill: -color-text-muted;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* -------------------------------------------------------------------- Tables */
+
+.table-view {
+    -fx-background-color: -color-surface;
+    -fx-background-radius: 14px;
+    -fx-border-radius: 14px;
+    -fx-border-color: -color-border;
+    -fx-border-width: 1px;
+    -fx-padding: 4px;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: transparent;
+    -fx-background-radius: 14px 14px 0 0;
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 1px;
+    -fx-padding: 6px 0;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: -color-text-muted;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+    -fx-alignment: center-left;
+}
+
+.table-row-cell {
+    -fx-background-color: -color-surface;
+    -fx-border-color: transparent transparent -color-border transparent;
+    -fx-border-width: 0.5px;
+    -fx-cell-size: 42px;
+}
+
+.table-row-cell:odd  { -fx-background-color: -color-surface-alt; }
+.table-row-cell:selected { -fx-background-color: -color-accent-soft; }
+
+.table-view .table-cell {
+    -fx-text-fill: -color-text;
+    -fx-alignment: center-left;
+    -fx-padding: 0 12px;
+}
+
+.table-view:focused { -fx-border-color: -color-border; }
+
+.table-placeholder-label {
+    -fx-text-fill: -color-text-muted;
+    -fx-font-size: 13px;
+}
+
+/* ---------------------------------------------------------------- Status pills */
+
+.pill {
+    -fx-background-radius: 20px;
+    -fx-padding: 3px 12px;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+.pill-available {
+    -fx-background-color: -color-success-soft;
+    -fx-text-fill: -color-success;
+}
+
+.pill-rented {
+    -fx-background-color: -color-warning-soft;
+    -fx-text-fill: -color-warning;
+}
+
+/* -------------------------------------------------------------------- Dialogs */
+
+.dialog-pane {
+    -fx-background-color: -color-surface;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: -color-surface;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-text;
+}
+
+.dialog-pane .content.label {
+    -fx-font-size: 13px;
+    -fx-text-fill: -color-text;
+}
+
+/* --------------------------------------------------------------- Receipt / misc */
+
+.receipt-total {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-accent;
+}
+
+.muted { -fx-text-fill: -color-text-muted; }
+
+.scroll-pane, .scroll-pane .viewport { -fx-background-color: transparent; }

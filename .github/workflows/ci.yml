@@ -21,6 +21,16 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Build
-        run: mvn -B clean package
+      # Compiles the sources and runs the full JUnit 5 suite
+      # (domain, service and SQLite repository integration tests),
+      # producing a JaCoCo coverage report.
+      - name: Build and test
+        run: mvn -B clean verify
 
+      - name: Upload coverage report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: jacoco-coverage
+          path: target/site/jacoco
+          if-no-files-found: ignore
