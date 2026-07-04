@@ -1,0 +1,20 @@
+# Java / Maven
+target/
+bin/
+*.class
+
+# Local runtime database
+Laiheus.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# IDE and OS files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+
