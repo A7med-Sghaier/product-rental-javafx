@@ -143,20 +143,4 @@ public class ProductDetails {
 	{
 		return this.getPeriode() * this.getPreis();
 	}
-	
-	public String parseProduktToDb()
-	{
-		return 	"'" + this.productName.get() + "' ,"+
-				this.productCategory.get().getId() + " ,"+
-				this.preis.get();
-	}
-	
-	public String parseRentToDb()
-	{
-		return 	this.cId.get() + " ,"+
-				this.pId.get() + " ,"+
-				"'"+ this.status.get() + "',"+
-				"'"+ this.dateFrom.get() + "',"+
-				"'"+ this.dateTo.get() + "'";
-	}
 }
