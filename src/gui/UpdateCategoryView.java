@@ -3,6 +3,8 @@ package gui;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 
 import java.sql.SQLException;
@@ -89,6 +91,9 @@ public class UpdateCategoryView {
 		/* Initialize the EventHandler for save Button*/
 		save.setOnAction(action -> {
 			try {
+				if(!this.isValidCategoryForm()) {
+					return;
+				}
 				if(this.category.getId() == 0) { // add category
 					Leihaus.db.addCategory(this.saveCategory());
 				} else { // update category
@@ -113,6 +118,23 @@ public class UpdateCategoryView {
 		this.footer = new HBox(save, cancel);
 		this.footer.getStyleClass().addAll("table-view-footer", "align-center");
 	}
+
+	private void showValidationWarning(String message)
+	{
+		Alert warningAlert = new Alert(AlertType.WARNING);
+		warningAlert.setGraphic(null);
+		warningAlert.setHeaderText(message);
+		warningAlert.showAndWait();
+	}
+
+	private boolean isValidCategoryForm()
+	{
+		if(this.label.getText() == null || this.label.getText().trim().isEmpty()) {
+			this.showValidationWarning("Bitte geben Sie eine Bezeichnung ein.");
+			return false;
+		}
+		return true;
+	}
 	
 	/**
 	 * Prepare the save function
@@ -120,7 +142,7 @@ public class UpdateCategoryView {
 	 */
 	public Category saveCategory()
 	{
-		this.category.setLabel(this.label.getText());
+		this.category.setLabel(this.label.getText().trim());
 		
 		return this.category;
 	}
