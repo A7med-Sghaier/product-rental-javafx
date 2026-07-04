@@ -81,4 +81,14 @@ class ProductServiceTest {
         assertEquals(1, available.size());
         assertEquals("Kamera", available.get(0).getLabel());
     }
+
+    @Test
+    void deleteDelegatesToRepository() {
+        Product product = valid();
+        product.setId(42);
+
+        service.delete(product);
+
+        verify(repository).deleteById(42);
+    }
 }
