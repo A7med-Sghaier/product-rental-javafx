@@ -59,11 +59,12 @@ JavaFX and SQLite desktop application for managing product rentals, created as a
 4. Add a recruiter-readable README with setup, features and portfolio context.
 5. Add a basic CI workflow for Maven builds.
 6. Replace SQL string concatenation with prepared statements.
+7. Add basic validation for required customer, category and product fields.
 
 ## Future improvement plan
 
 1. Add small persistence/service tests around database operations.
-2. Improve JavaFX form validation and user-facing error handling.
+2. Improve broader JavaFX user-facing error handling.
 3. Consider moving the project into the standard Maven `src/main/java` layout.
 
 ## Estimated effort
