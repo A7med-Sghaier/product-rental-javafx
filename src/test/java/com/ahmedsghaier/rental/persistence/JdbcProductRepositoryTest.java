@@ -62,4 +62,14 @@ class JdbcProductRepositoryTest extends RepositoryTestBase {
         assertEquals("Kamera Pro", reloaded.getLabel());
         assertEquals(0, new BigDecimal("7.50").compareTo(reloaded.getDailyPrice()));
     }
+
+    @Test
+    void deleteRemovesProduct() {
+        Product saved = products.save(sample("Stativ", "3.50"));
+
+        products.deleteById(saved.getId());
+
+        assertTrue(products.findAll().isEmpty());
+        assertTrue(products.findAllWithAvailability().isEmpty());
+    }
 }
