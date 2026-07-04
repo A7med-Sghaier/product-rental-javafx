@@ -10,6 +10,7 @@ Public repository name: `product-rental-javafx`.
 - Create rental records with start and end dates
 - Track rented and returned products
 - Filter rental, product and customer tables
+- Validate required customer, category and product form fields
 - Store data locally in SQLite
 
 ## Tech Stack
