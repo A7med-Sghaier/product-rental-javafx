@@ -124,18 +124,4 @@ public class Client {
 	{
 		this.tel.setValue(tel);
 	}
-	
-	/**
-	 * Parse the client Object to a string for the DB Request (update or create)
-	 * @return String
-	 */
-	public String parseClientToDB()
-	{
-		return 	"'" + this.firstname.get() + "' ,"+
-				"'" + this.lastname.get() +  "' ,"+
-				"'" + this.address.get() + "' ,"+
-				"'" + this.plz.get() + "' ,"+
-				"'" + this.city.get() +  "' ,"+
-				"'" + this.tel.get() + "'";
-	}
 }
