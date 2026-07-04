@@ -14,6 +14,7 @@ full documentation.
 3. Check the test suite under `src/test/java` for domain, service and SQLite repository coverage.
 4. Run `mvn test` or inspect the GitHub Actions history to verify the automated checks.
 5. Read [`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md) for the modernization story and interview talking points.
+6. Use [`docs/PROFILE_SNIPPETS.md`](docs/PROFILE_SNIPPETS.md) for the GitHub description, topics, CV bullet and LinkedIn wording.
 
 ## Screenshots
 
@@ -74,7 +75,9 @@ See [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full design, data mod
 rationale behind the key decisions.
 
 For the portfolio story behind the modernization, see
-[`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md).
+[`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md). For architecture decision
+records, see [`docs/DECISIONS.md`](docs/DECISIONS.md). For GitHub profile, CV and LinkedIn
+copy, see [`docs/PROFILE_SNIPPETS.md`](docs/PROFILE_SNIPPETS.md).
 
 ### Notable improvements over the original
 
@@ -84,6 +87,19 @@ For the portfolio story behind the modernization, see
 - **`BigDecimal` money** instead of `float`, and a `RentalStatus` enum instead of magic
   strings (persisted values are unchanged, so **existing databases still load**).
 - **Automated tests** and a **modern, token-based UI theme**.
+
+### Before / after modernization
+
+| Area | Original project | Modernized repository |
+| --- | --- | --- |
+| Structure | UI classes directly used a global DB helper | Layered `domain` / `service` / `persistence` / `ui` design |
+| Persistence | SQL built through string concatenation | JDBC repositories with `PreparedStatement` |
+| Money | `float` calculations | `BigDecimal` for prices and totals |
+| Status | Raw strings | `RentalStatus` enum with database-compatible values |
+| Dependencies | Bundled jars and generated build files | Maven-managed dependencies |
+| Testing | No automated tests | JUnit 5, Mockito and SQLite integration tests |
+| CI | No pipeline | GitHub Actions running `mvn clean verify` |
+| Documentation | Source dump | README, screenshots, architecture docs, decisions and case study |
 
 ## Getting started
 
