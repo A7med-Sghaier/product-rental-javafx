@@ -2,7 +2,7 @@
 
 Produkt-Ausleihe is a small JavaFX desktop application for managing product rentals. It was created as a personal university TD project and has been cleaned up as a portfolio-safe archive of the original work.
 
-Recommended public repository name: `product-rental-javafx`.
+Public repository name: `product-rental-javafx`.
 
 ## Features
 
@@ -62,4 +62,4 @@ For senior full-stack positioning, it should be presented as an archived/cleaned
 
 - The original archive included compiled `.class` files and bundled SQLite JDBC jars. These were removed from the cleaned repository because Maven now resolves dependencies.
 - The original sample `Laiheus.db` file contained dummy data and was removed to avoid publishing local runtime data.
-- The SQL layer still reflects the original student-project implementation and would be the main area to modernize in a future pass.
+- The SQL layer has been updated to use prepared statements for user-provided values.
