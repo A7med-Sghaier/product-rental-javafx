@@ -2,6 +2,8 @@ package gui;
 
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.scene.Group;
 import javafx.scene.layout.VBox;
@@ -115,6 +117,9 @@ public class UpdateClientView {
 		/* Initialize the EventHandler for save Button*/
 		save.setOnAction(action -> {
 			try {
+				if(!this.isValidClientForm()) {
+					return;
+				}
 				if(this.client.getId() == 0) {  // add clien
 					Leihaus.db.addClient(this.saveClient());
 				} else { // update client
@@ -139,6 +144,32 @@ public class UpdateClientView {
 		this.footer = new HBox(save, cancel);
 		this.footer.getStyleClass().addAll("table-view-footer", "align-center");
 	}
+
+	private boolean isBlank(TextField field)
+	{
+		return field.getText() == null || field.getText().trim().isEmpty();
+	}
+
+	private void showValidationWarning(String message)
+	{
+		Alert warningAlert = new Alert(AlertType.WARNING);
+		warningAlert.setGraphic(null);
+		warningAlert.setHeaderText(message);
+		warningAlert.showAndWait();
+	}
+
+	private boolean isValidClientForm()
+	{
+		if(this.isBlank(this.firstname)) {
+			this.showValidationWarning("Bitte geben Sie einen Vornamen ein.");
+			return false;
+		}
+		if(this.isBlank(this.lastname)) {
+			this.showValidationWarning("Bitte geben Sie einen Namen ein.");
+			return false;
+		}
+		return true;
+	}
 	
 	/**
 	 * Prepare the save function
@@ -146,12 +177,12 @@ public class UpdateClientView {
 	 */
 	public Client saveClient()
 	{
-		this.client.setFirstname(this.firstname.getText());
-		this.client.setLastname(this.lastname.getText());
-		this.client.setAddress(this.address.getText());
-		this.client.setPlz(this.plz.getText());
-		this.client.setCity(this.city.getText());
-		this.client.setTel(this.tel.getText());
+		this.client.setFirstname(this.firstname.getText().trim());
+		this.client.setLastname(this.lastname.getText().trim());
+		this.client.setAddress(this.address.getText().trim());
+		this.client.setPlz(this.plz.getText().trim());
+		this.client.setCity(this.city.getText().trim());
+		this.client.setTel(this.tel.getText().trim());
 		
 		return this.client;
 	}
