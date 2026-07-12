@@ -1,11 +1,38 @@
-# Produkt-Ausleihe
+<div align="center">
 
-A modern JavaFX desktop application for managing product rentals — customers, product
-catalogue, categories, rentals, returns and invoicing — backed by a local SQLite database.
+<img src="./assets/banner.svg" width="100%" alt="Produkt-Ausleihe" />
 
-Originally a university project, it has been **re-architected into a clean, layered,
-enterprise-style codebase** with a fresh visual design, a unit/integration test suite and
-full documentation.
+<br/>
+
+<a href="https://github.com/A7med-Sghaier/product-rental-javafx">
+  <img src="https://readme-typing-svg.demolab.com?font=Segoe+UI&weight=600&size=20&pause=1000&color=2DD4BF&center=true&vCenter=true&width=760&lines=JavaFX+rental-management+desktop+app;Layered+architecture+%C2%B7+dependencies+inward;SQLite+%C2%B7+prepared+statements+%C2%B7+no+SQL+injection;JUnit+5+%C2%B7+Mockito+%C2%B7+JaCoCo+%C2%B7+CI" alt="Desktop app for managing product rentals, backed by SQLite." />
+</a>
+
+<br/><br/>
+
+[![CI](https://github.com/A7med-Sghaier/product-rental-javafx/actions/workflows/ci.yml/badge.svg)](https://github.com/A7med-Sghaier/product-rental-javafx/actions/workflows/ci.yml)
+[![License: EPL 2.0](https://img.shields.io/badge/License-EPL_2.0-2C2255?style=for-the-badge)](LICENSE)
+[![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjdk.org)
+[![JavaFX](https://img.shields.io/badge/JavaFX-17-1E90FF?style=for-the-badge&logo=openjdk&logoColor=white)](https://openjfx.io)
+[![SQLite](https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org)
+
+![Maven](https://img.shields.io/badge/Maven-C71A36?style=flat-square&logo=apachemaven&logoColor=white)
+![JUnit5](https://img.shields.io/badge/JUnit_5-25A162?style=flat-square&logo=junit5&logoColor=white)
+![Mockito](https://img.shields.io/badge/Mockito-78A641?style=flat-square)
+![JaCoCo](https://img.shields.io/badge/JaCoCo-coverage-D22128?style=flat-square)
+
+</div>
+
+A modern **JavaFX** desktop application for managing product rentals — customers, catalogue,
+categories, rentals, returns and invoicing — backed by a local **SQLite** database.
+
+> [!NOTE]
+> Originally a university project, **re-architected into a clean, layered, enterprise-style
+> codebase**: prepared-statement JDBC repositories (no SQL injection), `BigDecimal` money, a
+> `RentalStatus` enum, framework-free dependency injection, a token-based UI theme, and an
+> automated test suite.
+
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
 
 ## Evaluate in 3 minutes
 
@@ -15,6 +42,8 @@ full documentation.
 4. Run `mvn test` or inspect the GitHub Actions history to verify the automated checks.
 5. Read [`docs/PORTFOLIO_CASE_STUDY.md`](docs/PORTFOLIO_CASE_STUDY.md) for the modernization story and interview talking points.
 6. Use [`docs/PROFILE_SNIPPETS.md`](docs/PROFILE_SNIPPETS.md) for the GitHub description, topics, CV bullet and LinkedIn wording.
+
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
 
 ## Screenshots
 
@@ -30,6 +59,8 @@ full documentation.
 
 ![Customers](docs/screenshots/customers.png)
 
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
 ## Features
 
 - **Dashboard** — KPI cards (active rentals, active customers, open revenue) and a
@@ -42,12 +73,16 @@ full documentation.
 - **Invoice** — a clean receipt summarising the rental and total.
 - Local **SQLite** persistence, created automatically on first run.
 
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
 ## Tech stack
 
 - Java 17, JavaFX 17
 - SQLite (via `sqlite-jdbc`), accessed through hand-written JDBC repositories
 - Maven
 - JUnit 5 + Mockito for testing, JaCoCo for coverage
+
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
 
 ## Architecture
 
@@ -101,6 +136,8 @@ copy, see [`docs/PROFILE_SNIPPETS.md`](docs/PROFILE_SNIPPETS.md).
 | CI | No pipeline | GitHub Actions running `mvn clean verify` |
 | Documentation | Source dump | README, screenshots, architecture docs, decisions and case study |
 
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
 ## Getting started
 
 ### Prerequisites
@@ -151,6 +188,8 @@ mvn test
 Runs the JUnit 5 suite (domain, service and repository integration tests). A coverage
 report is written to `target/site/jacoco/index.html`.
 
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
 ## Project structure
 
 ```text
@@ -165,8 +204,22 @@ src/main/resources/com/ahmedsghaier/rental/ui/theme.css   Design system
 src/test/java/...    JUnit 5 + Mockito tests
 ```
 
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
 ## Portfolio context
 
 This repository demonstrates layered application design, clean persistence with prepared
 statements, dependency injection without a framework, a modern JavaFX UI, and a pragmatic
 automated test strategy — grown out of an earlier university rental project.
+
+<div align="center"><img src="./assets/divider.svg" width="70%" alt="" /></div>
+
+<div align="center">
+
+### Built by Ahmed Sghaier — Senior Full-Stack Engineer
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ahmed-sghaier-449778137)
+[![Email](https://img.shields.io/badge/Email-a7mado008@gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:a7mado008@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-A7med--Sghaier-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/A7med-Sghaier)
+
+</div>
